@@ -2,6 +2,7 @@
     <wb-module deploy-name="ui5_demo">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/" source-path="/web"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res"/>
         <property name="context-root" value="ui5_demo"/>
         <property name="java-output-path" value="/ui5_demo/build/classes"/>
     </wb-module>
