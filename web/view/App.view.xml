@@ -1,0 +1,27 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="com.demo.controller.App" displayBlock="true">
+	 
+	<App>
+      <pages>
+         <Page title="Title">
+            <content>
+               <Panel
+                  headerText="Welcome to demo.">
+                  <content>
+
+                     <Button
+                        text="Show Hello"
+                        press="onShowHello"/>
+                     <Input
+                        value="Tony"
+                        description="Hello Tony"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                  </content>
+               </Panel>
+            </content>
+         </Page>
+      </pages>
+   </App>
+	 
+</core:View>
