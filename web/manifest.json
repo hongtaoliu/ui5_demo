@@ -1,0 +1,109 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+	"_version": "1.1.0",
+	"id": "tony_01",
+	"type": "application",
+	"i18n": "i18n/i18n.properties",
+	"title": "{{appTitle}}",
+	"description": "{{appDescription}}",
+	"applicationVersion": {
+	  "version": "1.0.0"
+	},
+	"dataSources": {
+	  "invoiceRemote": {
+		"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+		"type": "OData",
+		"settings": {
+		  "odataVersion": "2.0"
+		}
+	  }
+	}
+  },
+  "sap.ui": {
+	"_version": "1.1.0",
+	"technology": "UI5",
+	"deviceTypes": {
+	  "desktop": true,
+	  "tablet": true,
+	  "phone": true
+	},
+	"supportedThemes": [
+	  "sap_bluecrystal"
+	]
+  },
+  "sap.ui5": {
+	"_version": "1.1.0",
+	"rootView": "tony_01.view.app01",
+	"dependencies": {
+	  "minUI5Version": "1.30",
+	  "libs": {
+		"sap.m": {}
+	  }
+	},
+	 "models": {
+	  "i18n": {
+		"type": "sap.ui.model.resource.ResourceModel",
+		"settings": {
+		  "bundleName": "tony_01.i18n.i18n"
+		}
+	  }
+	},
+	"resources": {
+	  "css": [
+		{
+		  "uri": "css/style.css"
+		}
+	  ]
+	}, 
+	"routing": {
+	  "config": {
+		"routerClass": "sap.m.routing.Router",
+		"viewType": "XML",
+		"viewPath": "tony_01.view",
+		"controlId": "tony_01",
+		"controlAggregation": "pages"
+	  },
+	  "routes": [
+		{
+		  "pattern": "",
+		  "name": "app01",
+		  "target": "app01"
+		},
+		{
+		  "pattern": "app02",
+		  "name": "app02",
+		  "target": "app02"
+		},
+		{
+		  "pattern": "sessions",
+		  "name": "sessions",
+		  "target": "sessions"
+		},
+		{
+					"pattern": "Products/{objectId}",
+					"name": "object",
+					"target": "object"
+				}
+	  ],
+	  "targets": {
+		"app01": {
+		  "viewName": "app01",
+		  "viewLevel": 1
+		},
+		"app02": {
+		  "viewName": "app02"
+		},
+		"sessions": {
+		  "viewName": "sessions",
+		  "viewLevel": 2
+		},
+		"object": {
+					"viewName": "object",
+					"viewId": "object",
+					"viewLevel": 3
+				}
+	  }
+	}
+  }
+}

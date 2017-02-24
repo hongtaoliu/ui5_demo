@@ -1,0 +1,87 @@
+<mvc:View
+	controllerName="tony_01.controller.sessions"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns="sap.m">
+	<semantic:FullscreenPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="true"
+		title="{i18n>worklistTableTitle}">
+		<semantic:content>
+			<Table
+				id="table"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				class="sapUiResponsiveMargin"
+				growing="true"
+				growingScrollToLoad="true"
+				noDataText="{worklistView>/tableNoDataText}"
+				updateFinished="onUpdateFinished"
+				width="auto"
+				items="{
+					path: '/Products',
+					sorter: {
+						path: 'ProductName',
+						descending: false
+					}
+				}">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							id="tableHeader"
+							text="{i18n>worklistViewTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField
+							id="searchField"
+							search="onSearch"
+							tooltip="{i18n>worklistSearchTooltip}"
+							width="auto"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="nameColumn">
+						<Text
+							id="nameColumnTitle"
+							text="{i18n>TableNameColumnTitle}"/>
+					</Column>
+					<Column id="unitNumberColumn">
+						<Text
+							id="unitNumberColumnTitle"
+							text="{i18n>TableUnitNumberColumnTitle}"/>
+					</Column>
+					<Column id="stateColumn">
+						<Text
+							id="stateColumnTitle"
+							text="{i18n>TableStateColumnTitle}"/>
+					</Column>
+					<Column id="plannedDateColumn">
+						<Text
+							id="plannedDateColumnTitle"
+							text="{i18n>TablePlannedDateColumnTitle}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem
+						press="onPress"
+						type="Navigation">
+						<cells>
+							<ObjectIdentifier
+								title="{ProductName}"/>
+							<ObjectIdentifier
+								title="{UnitsInStock}"/>
+							<ObjectIdentifier
+								title="{Status}"/>
+					        <ObjectIdentifier
+								title="{PlannedDate}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction
+				id="shareEmail"
+				press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	</semantic:FullscreenPage>
+</mvc:View>

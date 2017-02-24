@@ -1,0 +1,13 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="tony_01.controller.app02" xmlns:html="http://www.w3.org/1999/xhtml">
+ 
+		<Page title="Title" showNavButton="true" navButtonPress="handleNavBack" >
+			<TileContainer id="container" tileDelete="handleTileDelete"
+				tiles="{/TileCollection}">
+				<StandardTile icon="sap-icon://{icon}" type="{type}"
+					number="{number}" numberUnit="{numberUnit}" title="{title}" info="{info}"
+					infoState="{infoState}" press="onShowHello" />
+			</TileContainer>
+		</Page>
+ 
+</core:View>

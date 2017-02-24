@@ -1,0 +1,43 @@
+{
+  "TileCollection" : [
+    {
+       "tileid" : "tile_01",
+      "icon" : "hint",
+      "type" : "Monitor",
+      "title" : "Tiles: a modern UI design pattern for overview & navigation.",
+      "pressHandleTile" : "handleTile1"
+      
+    },
+    {
+      "tileid" : "tile_02",
+      "icon" : "inbox",
+      "number" : "89",
+      "title" : "Sessions",
+      "info" : "Overdue",
+      "infoState" : "Error",
+      "pressHandleTile" : "handleTile2"
+    },
+    {
+      "tileid" : "tile_03",
+      "icon" : "inbox",
+      "type" : "Create",
+      "title" : "Create Leave Requests",
+      "info" : "28 Days Left",
+      "infoState" : "Success",
+      "pressHandleTile" : "handleTile1"
+    },
+    {
+      "tileid" : "tile_04",
+      "icon" : "travel-expense-report",
+      "number" : "281",
+      "numberUnit" : "euro",
+      "title" : "Travel Reimbursement",
+      "info" : "1 day ago",
+      "pressHandleTile" : "handleTile1"
+    }
+  ],
+  "recipient":{
+  "name":"Tony Test"
+  }
+
+}

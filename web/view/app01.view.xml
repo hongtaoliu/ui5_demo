@@ -1,0 +1,27 @@
+<mvc:View height="100%" controllerName="tony_01.controller.app01"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  xmlns="sap.m" displayBlock="true">
+	<App class="myAppDemoWT" id="tony_01">
+		<Page showHeader="true" enableScrolling="false" title="{i18n>appTitle}"><content>
+		
+            <mvc:XMLView viewName="tony_01.view.HelloPanel"/>
+            
+           <TileContainer 
+				id="container" 
+				tileDelete="handleTileDelete"
+				tiles="{/TileCollection}" >
+				
+				<StandardTile  xmlns:z="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+				    z:myid="{tileid}"
+					icon="sap-icon://{icon}" 
+					type="{type}"
+					number="{number}" 
+					numberUnit="{numberUnit}" 
+					title="{title}" 
+					info="{info}"
+					infoState="{infoState}" 
+					press="handleTilePress" />
+					
+			</TileContainer></content>
+		</Page>
+	</App>
+</mvc:View>
